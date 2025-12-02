@@ -48,14 +48,31 @@ variable "resource_name_sequence_start" {
     error_message = "The number must be between 1 and 999"
   }
 }
-
 variable "resource_name_templates" {
   type        = map(string)
   description = "A map of resource names to use"
   default = {
     resource_group_name          = "rg-$${workload}-$${environment}-$${location}-$${sequence}"
     log_analytics_workspace_name = "law-$${workload}-$${environment}-$${location}-$${sequence}"
+    virtual_network_name         = "vnet-$${workload}-$${environment}-$${location}-$${sequence}"
+    network_security_group_name  = "nsg-$${workload}-$${environment}-$${location}-$${sequence}"
+    nat_gateway_name             = "nat-$${workload}-$${environment}-$${location}-$${sequence}"
+    nat_gateway_public_ip_name   = "pip-nat-$${workload}-$${environment}-$${location}-$${sequence}"
   }
+}
+
+variable "address_space" {
+  type        = string
+  description = "The address space that is used the virtual network"
+}
+
+variable "subnets" {
+  type = map(object({
+    size                       = number
+    has_nat_gateway            = bool
+    has_network_security_group = bool
+  }))
+  description = "The subnets"
 }
 
 variable "tags" {
