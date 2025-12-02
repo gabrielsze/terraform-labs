@@ -1,4 +1,4 @@
 output "resource_group_ids" {
-  value       = { for key, value in azurerm_resource_group.demo : key => value.id }
+  value       = module.demo.resource_group_ids
   description = "Resource group ids"
 }
