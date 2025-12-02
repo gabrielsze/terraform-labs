@@ -5,9 +5,17 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 4.19"
     }
+    azapi = {
+      source  = "Azure/azapi"
+      version = "~> 2.2"
+    }
     random = {
       source  = "hashicorp/random"
       version = "~> 3.6"
+    }
+    http = {
+      source  = "hashicorp/http"
+      version = "~> 3.4"
     }
   }
 }
@@ -19,4 +27,5 @@ provider "azurerm" {
     }
   }
   resource_provider_registrations = "extended"
+  storage_use_azuread             = true
 }
