@@ -16,4 +16,9 @@ provider "azurerm" {
 resource "azurerm_resource_group" "contoso_rg" {
   name     = "contoso_rg"
   location = "UK South"
+
+
+  tags = {
+    cost_center = "contoso research"
+  }
 }
