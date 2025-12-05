@@ -1,0 +1,2 @@
+virtual_network_subnet_web_tier_id      = "/subscriptions/0c2c1b2e-b8e7-4553-a569-8131fac6acaf/resourceGroups/rg-demo-dev-swedencentral-002/providers/Microsoft.Network/virtualNetworks/vnet-demo-dev-swedencentral-001/subnets/subnet-web"
+virtual_network_subnet_database_tier_id = "/subscriptions/0c2c1b2e-b8e7-4553-a569-8131fac6acaf/resourceGroups/rg-demo-dev-swedencentral-002/providers/Microsoft.Network/virtualNetworks/vnet-demo-dev-swedencentral-001/subnets/subnet-database"
