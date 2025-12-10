@@ -36,4 +36,19 @@ locals {
 
   # Define the name of the key vault
   key_vault_name = "aikv${substr(md5("${azurerm_resource_group.dep.name}"), 0, 4)}"
+
+  # Define the name of the storage account
+  storage_account_name = "aist${substr(md5("${azurerm_resource_group.dep.name}"), 0, 8)}"
+
+  # Define the name for the app insights
+  app_insights_name = "ai-app-insights"
+
+  # Define the name for the log analytics workspace
+  log_analytics_workspace_name = "ai-la"
+
+  # Define the name for the private endpoint
+  private_endpoint_name = "ai-pe"
+
+  # Define the name for the network interface
+  network_interface_name = "ai-pe-nic"
 }
