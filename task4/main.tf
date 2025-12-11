@@ -25,3 +25,20 @@ resource "azurerm_user_assigned_identity" "this" {
   name                = module.naming.user_assigned_identity.name_unique
   resource_group_name = azurerm_resource_group.dep.name
 }
+
+# Azure Machine Learning Workspace
+resource "azurerm_machine_learning_workspace" "this" {
+  name                = local.machine_learning_workspace_name
+  location            = local.location
+  resource_group_name = azurerm_resource_group.dep.name
+
+  application_insights_id = module.app-insights.resource_id
+  key_vault_id            = module.vault.resource_id
+  storage_account_id      = module.storage.resource_id
+
+  sku_name = "Basic"
+
+  identity {
+    type = "SystemAssigned"
+  }
+}

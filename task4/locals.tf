@@ -51,4 +51,7 @@ locals {
 
   # Define the name for the network interface
   network_interface_name = "ai-pe-nic"
+
+  # Define the name for the Azure Machine Learning workspace
+  machine_learning_workspace_name = "ai-mlws"
 }
